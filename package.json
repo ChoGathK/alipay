@@ -5,6 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
     "push": "bash template/git.push.sh"
   },
   "repository": {
@@ -16,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/JiaYangStudio/AliPay/issues"
   },
-  "homepage": "https://github.com/JiaYangStudio/AliPay#readme"
+  "homepage": "https://github.com/JiaYangStudio/AliPay#readme",
+  "dependencies": {
+    "alipay-sdk": "^3.1.4",
+    "tslint": "^6.1.3"
+  }
 }

@@ -8,11 +8,11 @@ function error_exit {
   exit 1
 }
 
-# yarn lint || error_exit "lint"
+yarn lint || error_exit "lint"
 
-# yarn build || error_exit "tsc"
+yarn build || error_exit "build"
 
-git add . || error_exit "git add"
+git add . || error_exit "git add ."
 
 git commit -m "${1}" || error_exit "git commit"
 
