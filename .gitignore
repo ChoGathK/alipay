@@ -1,5 +1,7 @@
 # compiled output
 /node_modules
+yarn.lock
+package-lock.json
 
 # Logs
 logs
@@ -25,9 +27,4 @@ lerna-debug.log*
 .settings/
 *.sublime-workspace
 .vscode/*
-
-# build
-dist
 gitfoo.sh
-yarn.lock
-package-lock.json
