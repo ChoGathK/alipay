@@ -5,17 +5,14 @@ const alipay_sdk_1 = require("alipay-sdk");
 /**
  * 阿里云支付 SDK 的 TypeScript 封装，为您的支付服务提供更简洁的 API
  *
- * @see: [git](https://github.com/alipay/alipay-sdk-nodejs-all)
- * @see: [doc](https://www.yuque.com/chenqiu/alipay-node-sdk/config-plantform)
+ * @see: [github](https://github.com/alipay/alipay-sdk-nodejs-all)
+ * @see: [文档地址](https://www.yuque.com/chenqiu/alipay-node-sdk/config-plantform)
+ *
+ * @param: config `AlipaySdkConfig`
+ * @param: type `"cert" | "simple"` 证书模式，普通模式
  */
 class AliPayClient {
-    /**
-     * 实例化 SDK 对象
-     *
-     * @param: config `AlipaySdkConfig`
-     * @param: type `cert' | 'simple` 证书模式，普通模式
-     */
-    async create(config, type = 'simple') {
+    constructor(config, type = 'simple') {
         // 创建证书模式 SDK 实例
         if (type === 'cert') {
             const { privateKey, alipayRootCertPath, appCertPath, alipayPublicCertPath } = config;
