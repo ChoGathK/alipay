@@ -147,8 +147,8 @@
         "affectsGlobalScope": false
       },
       "../node_modules/@acheetahk/fastweb/dist/base.d.ts": {
-        "version": "f40f5c5deeaa838485d7028efd698ca55f250fcf60b091588c259c2504b1132f",
-        "signature": "f40f5c5deeaa838485d7028efd698ca55f250fcf60b091588c259c2504b1132f",
+        "version": "80d141aa228372a6a62e898489922585077d3ebb19a57eb050740498f188695e",
+        "signature": "80d141aa228372a6a62e898489922585077d3ebb19a57eb050740498f188695e",
         "affectsGlobalScope": false
       },
       "../node_modules/@acheetahk/fastweb/dist/index.d.ts": {
@@ -172,7 +172,7 @@
         "affectsGlobalScope": false
       },
       "../src/base.ts": {
-        "version": "90a81bae2e0f8b582a5723a25406dcc8bc55f91999874be26f91d0c084f68667",
+        "version": "fbcfd6bcc0f8c956558b643bc327592fdb377123d2dcd1d60d81c1df650f5e7e",
         "signature": "13f77dd97629cf7696eeca65ae8aa209fedc4d5662b840dc967206cf66983b9a",
         "affectsGlobalScope": false
       },

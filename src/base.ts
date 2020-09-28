@@ -1,11 +1,16 @@
+import { resolve } from 'path';
 import { fastweb } from '@acheetahk/fastweb';
 import AliPaySdk, { AlipaySdkConfig } from 'alipay-sdk';
 import { SdkType, ExecOptions, ExecByAesOptions } from './types';
 
 /**
+ * 证书下载地址
+ */
+const path = resolve(__dirname, '../cert');
+
+/**
  * 支付宝SDK
  */
-
  export class AliPayClient {
 
   public sdk: AliPaySdk;
@@ -36,9 +41,9 @@ import { SdkType, ExecOptions, ExecByAesOptions } from './types';
       const { privateKey, appCertPath, alipayRootCertPath, alipayPublicCertPath } = config;
 
       config.privateKey = await fastweb.fileToStr(privateKey);
-      config.appCertPath = await fastweb.fileDownload(appCertPath, this.appName);
-      config.alipayRootCertPath = await fastweb.fileDownload(alipayRootCertPath, this.appName);
-      config.alipayPublicCertPath = await fastweb.fileDownload(alipayPublicCertPath, this.appName);
+      config.appCertPath = await fastweb.fileDownload(appCertPath, path, this.appName);
+      config.alipayRootCertPath = await fastweb.fileDownload(alipayRootCertPath, path, this.appName);
+      config.alipayPublicCertPath = await fastweb.fileDownload(alipayPublicCertPath, path, this.appName);
 
       this.sdk = new AliPaySdk(config);
     }

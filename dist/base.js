@@ -1,8 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AliPayClient = void 0;
+const path_1 = require("path");
 const fastweb_1 = require("@acheetahk/fastweb");
 const alipay_sdk_1 = require("alipay-sdk");
+/**
+ * 证书下载地址
+ */
+const path = path_1.resolve(__dirname, '../cert');
 /**
  * 支付宝SDK
  */
@@ -28,9 +33,9 @@ class AliPayClient {
         if (type === 'cert') {
             const { privateKey, appCertPath, alipayRootCertPath, alipayPublicCertPath } = config;
             config.privateKey = await fastweb_1.fastweb.fileToStr(privateKey);
-            config.appCertPath = await fastweb_1.fastweb.fileDownload(appCertPath, this.appName);
-            config.alipayRootCertPath = await fastweb_1.fastweb.fileDownload(alipayRootCertPath, this.appName);
-            config.alipayPublicCertPath = await fastweb_1.fastweb.fileDownload(alipayPublicCertPath, this.appName);
+            config.appCertPath = await fastweb_1.fastweb.fileDownload(appCertPath, path, this.appName);
+            config.alipayRootCertPath = await fastweb_1.fastweb.fileDownload(alipayRootCertPath, path, this.appName);
+            config.alipayPublicCertPath = await fastweb_1.fastweb.fileDownload(alipayPublicCertPath, path, this.appName);
             this.sdk = new alipay_sdk_1.default(config);
         }
         // 创建普通模式 SDK 实例
