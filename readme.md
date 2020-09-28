@@ -1,4 +1,4 @@
-# 支付宝 SDK （alipay）
+# 支付宝插件
 
 [![](https://img.shields.io/badge/npm-@acheetahk/alipay-1E90FF)](https://www.npmjs.com/package/@acheetahk/alipay)
 
