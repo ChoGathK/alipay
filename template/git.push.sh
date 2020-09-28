@@ -12,6 +12,8 @@ yarn lint || error_exit "lint"
 
 yarn build || error_exit "build"
 
+node template/npm.version.js || error_exit "npm update version"
+
 git add . || error_exit "git add ."
 
 git commit -m "${1}" || error_exit "git commit"
