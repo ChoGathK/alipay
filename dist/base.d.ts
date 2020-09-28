@@ -1,17 +1,26 @@
 import AliPaySdk, { AlipaySdkConfig } from 'alipay-sdk';
 import { SdkType, ExecOptions, ExecByAesOptions } from './types';
 /**
- * 阿里云支付 SDK 的 TypeScript 封装，为您的支付服务提供更简洁的 API
- *
- * @see: [github](https://github.com/alipay/alipay-sdk-nodejs-all)
- * @see: [文档地址](https://www.yuque.com/chenqiu/alipay-node-sdk/config-plantform)
- *
- * @param: config `AlipaySdkConfig`
- * @param: type `"cert" | "simple"` 证书模式，普通模式
+ * 支付宝SDK
  */
 export declare class AliPayClient {
     sdk: AliPaySdk;
-    constructor(config: AlipaySdkConfig, type?: SdkType);
+    appName: string;
+    /**
+     * 实例化支付宝 SDK
+     *
+     * @param: appName `string` 实例名称，默认是 default
+     */
+    constructor(appName?: string);
+    /**
+     * 创建 SDK
+     *
+     * @description: privateKey, appCertPath, alipayRootCertPath, alipayPublicCertPath 必须指定为可下载的URL路径 ！
+     *
+     * @param: config `AlipaySdkConfig` 调用参数
+     * @param: type `'cert' | 'simple'` 实例类型
+     */
+    create(config: AlipaySdkConfig, type?: SdkType): Promise<void>;
     /**
      * 调用无需加密的接口
      *

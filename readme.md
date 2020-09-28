@@ -1,7 +1,8 @@
-# AliPay
+# 支付宝（AliPay）SDK
 
-[AliPay-Sdk](https://github.com/alipay/alipay-sdk-nodejs-all) 的 TypeScript 封装，为您的支付服务提供更简洁的 API
+> 当前版本 V1.0.0
 
-## 当前版本号
+## 依赖
 
-* V1.0.0
+* [GitHub](https://github.com/alipay/alipay-sdk-nodejs-all)
+* [文档地址](https://www.yuque.com/chenqiu/alipay-node-sdk/config-plantform)

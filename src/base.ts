@@ -1,43 +1,55 @@
+import { fastDownload, fastToStr } from './file';
 import AliPaySdk, { AlipaySdkConfig } from 'alipay-sdk';
 import { SdkType, ExecOptions, ExecByAesOptions } from './types';
 
 /**
- * 阿里云支付 SDK 的 TypeScript 封装，为您的支付服务提供更简洁的 API
- *
- * @see: [github](https://github.com/alipay/alipay-sdk-nodejs-all)
- * @see: [文档地址](https://www.yuque.com/chenqiu/alipay-node-sdk/config-plantform)
- *
- * @param: config `AlipaySdkConfig`
- * @param: type `"cert" | "simple"` 证书模式，普通模式
+ * 支付宝SDK
  */
-export class AliPayClient {
+
+ export class AliPayClient {
 
   public sdk: AliPaySdk;
 
-  constructor(config: AlipaySdkConfig, type: SdkType = 'simple') {
+  public appName: string;
+
+  /**
+   * 实例化支付宝 SDK
+   *
+   * @param: appName `string` 实例名称，默认是 default
+   */
+  constructor(appName: string = 'default') {
+    this.appName = appName;
+  }
+
+  /**
+   * 创建 SDK
+   *
+   * @description: privateKey, appCertPath, alipayRootCertPath, alipayPublicCertPath 必须指定为可下载的URL路径 ！
+   *
+   * @param: config `AlipaySdkConfig` 调用参数
+   * @param: type `'cert' | 'simple'` 实例类型
+   */
+  public async create (config: AlipaySdkConfig, type: SdkType = 'simple') {
 
     // 创建证书模式 SDK 实例
     if (type === 'cert') {
-      const { privateKey, alipayRootCertPath, appCertPath, alipayPublicCertPath } = config;
-      // 这里未完成，预想的是文件全部从远程拉取（验证身份后允许拉取）
+      const { privateKey, appCertPath, alipayRootCertPath, alipayPublicCertPath } = config;
 
-      try {
-        this.sdk = new AliPaySdk(config);
-      } catch (error) {
-        throw new Error('创建失败，失败原因：' + error);
-      }
+      config.privateKey = await fastToStr(privateKey);
+      config.appCertPath = await fastDownload(appCertPath, this.appName);
+      config.alipayRootCertPath = await fastDownload(alipayRootCertPath, this.appName);
+      config.alipayPublicCertPath = await fastDownload(alipayPublicCertPath, this.appName);
+
+      this.sdk = new AliPaySdk(config);
     }
 
     // 创建普通模式 SDK 实例
     else if (type === 'simple') {
-      const { privateKey, encryptKey } = config;
-      // 这里未完成，预想的是文件全部从远程拉取（验证身份后允许拉取）
+      const { privateKey } = config;
 
-      try {
-        this.sdk = new AliPaySdk(config);
-      } catch (error) {
-        throw new Error('创建失败，失败原因：' + error);
-      }
+      config.privateKey = await fastToStr(privateKey);
+
+      this.sdk = new AliPaySdk(config);
     }
 
     else {
@@ -54,7 +66,10 @@ export class AliPayClient {
   public async exec(options: ExecOptions) {
     const result = await this.sdk.exec(
       options.oauthToken,
-      { grantType: 'authorization_code', ...options },
+      {
+        grantType: 'authorization_code',
+        ...options,
+      },
     );
 
     return result;
@@ -69,8 +84,10 @@ export class AliPayClient {
     const result = await this.sdk.exec(
       options.aesSet,
       {
-        bizContent: { merchantAppId: options.merchantAppId },
         needEncrypt: true, // 自动AES加解密
+        bizContent: {
+          merchantAppId: options.merchantAppId,
+        },
       },
     );
 

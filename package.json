@@ -1,5 +1,5 @@
 {
-  "name": "@chogath/alipay",
+  "name": "@acheetahk/alipay",
   "version": "1.0.0",
   "description": "[AliPay-Sdk](https://github.com/alipay/alipay-sdk-nodejs-all) 的 TypeScript 封装，为您的支付服务提供更简洁的 API",
   "main": "dist/index.js",
@@ -11,16 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JiaYangStudio/AliPay.git"
+    "url": "git+https://github.com/A-Cheetah/AliPay.git"
   },
   "author": "chogath",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JiaYangStudio/AliPay/issues"
+    "url": "https://github.com/A-Cheetah/AliPay/issues"
   },
-  "homepage": "https://github.com/JiaYangStudio/AliPay#readme",
+  "homepage": "https://github.com/A-Cheetah/AliPay#readme",
   "dependencies": {
-    "alipay-sdk": "^3.1.4",
-    "tslint": "^6.1.3"
+    "@types/request": "^2.48.5",
+    "request": "^2.88.2",
+    "alipay-sdk": "^3.1.4"
   }
 }
