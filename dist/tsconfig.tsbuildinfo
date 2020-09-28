@@ -402,8 +402,8 @@
         "affectsGlobalScope": false
       },
       "../node_modules/alipay-sdk/lib/alipay.d.ts": {
-        "version": "b7b2c0363d2abed27e9524efef52903a61334889c91ded53611e64b254b686ce",
-        "signature": "b7b2c0363d2abed27e9524efef52903a61334889c91ded53611e64b254b686ce",
+        "version": "0595fcd767b7fa3940bb51ebc459693e81be9dbad4e8497625a7990add769967",
+        "signature": "0595fcd767b7fa3940bb51ebc459693e81be9dbad4e8497625a7990add769967",
         "affectsGlobalScope": false
       },
       "../src/types.ts": {
@@ -894,8 +894,6 @@
         "../node_modules/form-data/index.d.ts"
       ],
       "../node_modules/alipay-sdk/lib/alipay.d.ts": [
-        "../node_modules/@types/node/base.d.ts",
-        "../node_modules/@types/node/index.d.ts",
         "../node_modules/alipay-sdk/lib/form.d.ts"
       ],
       "../node_modules/alipay-sdk/lib/form.d.ts": [

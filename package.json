@@ -1,7 +1,7 @@
 {
 	"name": "@acheetahk/alipay",
-	"version": "1.0.6",
-	"description": "支付宝 SDK （AliPay）",
+	"version": "1.0.7",
+	"description": "支付宝 SDK alipay",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/A-CheetahK/AliPay.git"
+		"url": "git+https://github.com/A-CheetahK/alipay.git"
 	},
 	"author": "chogath",
 	"license": "ISC",

@@ -1,4 +1,4 @@
-# 支付宝 SDK （AliPay）
+# 支付宝 SDK （alipay）
 
 > [npm 地址](https://www.npmjs.com/package/@acheetahk/alipay)
 
