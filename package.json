@@ -1,6 +1,6 @@
 {
 	"name": "@acheetahk/alipay",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "支付宝 SDK alipay",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
