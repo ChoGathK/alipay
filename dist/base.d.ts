@@ -1,13 +1,13 @@
 import AliPaySdk, { AlipaySdkConfig } from 'alipay-sdk';
 import { SdkType, ExecOptions, ExecByAesOptions } from './types';
 /**
- * 支付宝SDK
+ * 支付宝插件
  */
 export declare class AliPayClient {
-    sdk: AliPaySdk;
     appName: string;
+    sdk: AliPaySdk;
     /**
-     * 实例化支付宝 SDK
+     * 实例化支付宝插件
      *
      * @param: appName `string` 实例名称，默认是 default
      */

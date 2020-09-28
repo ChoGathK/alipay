@@ -9,22 +9,18 @@ import { SdkType, ExecOptions, ExecByAesOptions } from './types';
 const path = resolve(__dirname, '../cert');
 
 /**
- * 支付宝SDK
+ * 支付宝插件
  */
  export class AliPayClient {
 
   public sdk: AliPaySdk;
 
-  public appName: string;
-
   /**
-   * 实例化支付宝 SDK
+   * 实例化支付宝插件
    *
    * @param: appName `string` 实例名称，默认是 default
    */
-  constructor(appName: string = 'default') {
-    this.appName = appName;
-  }
+  constructor(public appName: string = 'default') {}
 
   /**
    * 创建 SDK

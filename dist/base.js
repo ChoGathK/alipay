@@ -9,11 +9,11 @@ const alipay_sdk_1 = require("alipay-sdk");
  */
 const path = path_1.resolve(__dirname, '../cert');
 /**
- * 支付宝SDK
+ * 支付宝插件
  */
 class AliPayClient {
     /**
-     * 实例化支付宝 SDK
+     * 实例化支付宝插件
      *
      * @param: appName `string` 实例名称，默认是 default
      */
