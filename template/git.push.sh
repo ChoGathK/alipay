@@ -10,6 +10,8 @@ function error_exit {
 
 yarn lint || error_exit "lint"
 
+rm -rf dist || error_exit "rm -rf dist"
+
 yarn build || error_exit "build"
 
 node template/npm.version.js || error_exit "npm update version"
