@@ -18,17 +18,18 @@ const path = resolve(__dirname, '../cert');
   /**
    * 实例化支付宝插件
    *
-   * @param: appName `string` 实例名称，默认是 default
+   * appName `string` 实例名称，默认是 default
    */
   constructor(public appName: string = 'default') {}
 
   /**
    * 创建 SDK
    *
-   * @description: privateKey, appCertPath, alipayRootCertPath, alipayPublicCertPath 必须指定为可下载的URL路径 ！
+   * privateKey, appCertPath, alipayRootCertPath, alipayPublicCertPath 必须指定为可下载的URL路径 ！
    *
-   * @param: config `AlipaySdkConfig` 调用参数
-   * @param: type `'cert' | 'simple'` 实例类型
+   * config `AlipaySdkConfig` 调用参数
+   *
+   * type `'cert' | 'simple'` 实例类型
    */
   public async create (config: AlipaySdkConfig, type: SdkType = 'simple') {
 
@@ -62,7 +63,7 @@ const path = resolve(__dirname, '../cert');
   /**
    * 调用无需加密的接口
    *
-   * @param: options `ExecOptions` 调用参数
+   * options `ExecOptions` 调用参数
    */
   public async exec(options: ExecOptions) {
     const result = await this.sdk.exec(
@@ -79,7 +80,7 @@ const path = resolve(__dirname, '../cert');
   /**
    * 调用需要AES加解密的接口
    *
-   * @param: options `ExecByAesOptions` 调用参数
+   * options `ExecByAesOptions` 调用参数
    */
   public async execByAes(options: ExecByAesOptions) {
     const result = await this.sdk.exec(
