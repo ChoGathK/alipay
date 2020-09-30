@@ -147,13 +147,13 @@
         "affectsGlobalScope": false
       },
       "../node_modules/@acheetahk/fastweb/dist/base.d.ts": {
-        "version": "80d141aa228372a6a62e898489922585077d3ebb19a57eb050740498f188695e",
-        "signature": "80d141aa228372a6a62e898489922585077d3ebb19a57eb050740498f188695e",
+        "version": "80fe1e72b198588505c65db12a8bf8a1398215f83912bf0840e7350fd69f80af",
+        "signature": "80fe1e72b198588505c65db12a8bf8a1398215f83912bf0840e7350fd69f80af",
         "affectsGlobalScope": false
       },
       "../node_modules/@acheetahk/fastweb/dist/index.d.ts": {
-        "version": "15fd75efd41164d874536810fbcf49211c6793e3a7a628f10be4e0c2722f9763",
-        "signature": "15fd75efd41164d874536810fbcf49211c6793e3a7a628f10be4e0c2722f9763",
+        "version": "a5d860f86f23fe76b10f04ff82befc7d3084be199f136518d91bc54ba419eaba",
+        "signature": "a5d860f86f23fe76b10f04ff82befc7d3084be199f136518d91bc54ba419eaba",
         "affectsGlobalScope": false
       },
       "../node_modules/alipay-sdk/lib/form.d.ts": {
@@ -172,7 +172,7 @@
         "affectsGlobalScope": false
       },
       "../src/base.ts": {
-        "version": "cc0af3e5245811b3f9dc7917db678bd02fc0caceeba2bff1c9384a42380c8f06",
+        "version": "a629df18e15ac2a40844018807fede55d9812c5bf06768ac758e1e9c195a530e",
         "signature": "4aa647b92353224cb0f848ba2b7af64a4a2cea5d2fa36de38a2a485e0513504a",
         "affectsGlobalScope": false
       },

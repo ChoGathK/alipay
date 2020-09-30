@@ -1,6 +1,6 @@
 {
 	"name": "@acheetahk/alipay",
-	"version": "1.0.15",
+	"version": "1.0.16",
 	"description": "支付宝 SDK alipay",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -16,7 +16,7 @@
 	"author": "chogath",
 	"license": "ISC",
 	"dependencies": {
-		"@acheetahk/fastweb": "^1.0.2",
+		"@acheetahk/fastweb": "^1.0.4",
 		"alipay-sdk": "^3.1.4"
 	}
 }

@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { fastweb } from '@acheetahk/fastweb';
+import { Fastweb } from '@acheetahk/fastweb';
 import AliPaySdk, { AlipaySdkConfig } from 'alipay-sdk';
 import { SdkType, ExecOptions, ExecByAesOptions } from './types';
 
@@ -37,10 +37,10 @@ const path = resolve(__dirname, '../cert');
     if (type === 'cert') {
       const { privateKey, appCertPath, alipayRootCertPath, alipayPublicCertPath } = config;
 
-      config.privateKey = await fastweb.fileToStr(privateKey);
-      config.appCertPath = await fastweb.fileDownload(appCertPath, path, this.appName);
-      config.alipayRootCertPath = await fastweb.fileDownload(alipayRootCertPath, path, this.appName);
-      config.alipayPublicCertPath = await fastweb.fileDownload(alipayPublicCertPath, path, this.appName);
+      config.privateKey = await Fastweb.fileToStr(privateKey);
+      config.appCertPath = await Fastweb.fileDownload(appCertPath, path, this.appName);
+      config.alipayRootCertPath = await Fastweb.fileDownload(alipayRootCertPath, path, this.appName);
+      config.alipayPublicCertPath = await Fastweb.fileDownload(alipayPublicCertPath, path, this.appName);
 
       this.sdk = new AliPaySdk(config);
     }
@@ -49,7 +49,7 @@ const path = resolve(__dirname, '../cert');
     else if (type === 'simple') {
       const { privateKey } = config;
 
-      config.privateKey = await fastweb.fileToStr(privateKey);
+      config.privateKey = await Fastweb.fileToStr(privateKey);
 
       this.sdk = new AliPaySdk(config);
     }
