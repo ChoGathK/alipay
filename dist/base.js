@@ -48,6 +48,7 @@ class AliPayClient {
         else {
             throw new Error('创建失败，类型（type）必须是 simple 或者 cert 的其中一种 !');
         }
+        return this.sdk;
     }
     /**
      * 调用无需加密的接口

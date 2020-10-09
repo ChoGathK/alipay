@@ -31,7 +31,7 @@ const path = resolve(__dirname, '../cert');
    *
    * type `'cert' | 'simple'` 实例类型
    */
-  public async create (config: AlipaySdkConfig, type: SdkType = 'simple') {
+  public async create (config: AlipaySdkConfig, type: SdkType = 'simple'): Promise<AliPaySdk> {
 
     // 创建证书模式 SDK 实例
     if (type === 'cert') {
@@ -57,6 +57,8 @@ const path = resolve(__dirname, '../cert');
     else {
       throw new Error('创建失败，类型（type）必须是 simple 或者 cert 的其中一种 !');
     }
+
+    return this.sdk;
 
   }
 

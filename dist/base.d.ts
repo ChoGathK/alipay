@@ -21,7 +21,7 @@ export declare class AliPayClient {
      *
      * type `'cert' | 'simple'` 实例类型
      */
-    create(config: AlipaySdkConfig, type?: SdkType): Promise<void>;
+    create(config: AlipaySdkConfig, type?: SdkType): Promise<AliPaySdk>;
     /**
      * 调用无需加密的接口
      *
